@@ -6,9 +6,9 @@ export default {
 			fontFamily: {
 				mono: ["IBM Plex Mono", "ui-monospace"],
 				sans: [
+					"Archivo Variable",
 					"Recursive Variable",
 					"Figtree Variable",
-					"Archivo Variable",
 					"sans-serif",
 				],
 			},
