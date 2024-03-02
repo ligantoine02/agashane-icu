@@ -5,3 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("./assets/fonts/NeueMachina-Regular.ttf");
+}

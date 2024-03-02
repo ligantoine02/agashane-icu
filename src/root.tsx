@@ -10,8 +10,10 @@ import "@fontsource-variable/archivo";
 import "@fontsource-variable/figtree";
 import "@fontsource-variable/recursive";
 import "@fontsource/ibm-plex-mono";
+import "@fontsource-variable/darker-grotesque";
 
 import "./global.css";
+import "highlight.js/styles/nord.css";
 
 export default component$(() => {
 	/**

@@ -16,10 +16,10 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
 	return (
-		<>
+		<div class="container md:max-w-6xl px-4 mx-auto">
 			<Header />
 			<Slot />
 			<Footer />
-		</>
+		</div>
 	);
 });

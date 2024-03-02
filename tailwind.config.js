@@ -11,8 +11,17 @@ export default {
 					"Recursive Variable",
 					"sans-serif",
 				],
+				figtree: ["Figtree Variable", "sans-serif"],
+				archivo: ["Archivo Variable", "sans-serif"],
+				recursive: ["Recursive Variable", "sans-serif"],
+				darkerGrotesque: ["Darker Grotesque Variable", "sans-serif"],
+				neueMachina: [
+					"Neue Machina",
+					"Darker Grotesque Variable",
+					"sans-serif",
+				],
 			},
 		},
 	},
-	plugins: [require("rippleui")],
+	plugins: [require("rippleui"), require("@tailwindcss/typography")],
 };
