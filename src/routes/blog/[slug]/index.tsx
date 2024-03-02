@@ -3,7 +3,7 @@ import {
 	type StaticGenerateHandler,
 	routeLoader$,
 } from "@builder.io/qwik-city";
-// import { TableOfContent } from "~/components/table-of-content/table-of-content";
+import { TableOfContent } from "~/components/table-of-content/table-of-content";
 import { QShowPost } from "~/integrations/react/ShowPost";
 import octokit from "~/lib/api";
 import { toSlug } from "~/lib/utils";
@@ -76,10 +76,9 @@ export default component$(() => {
 				<header>
 					<p>Found on this page...</p>
 				</header>
-				//{" "}
+
 				<section class="flex-1">
-					// <TableOfContent content={post.value.body} />
-					//{" "}
+					<TableOfContent content={post.value.body} />
 				</section>
 			</aside>
 		</main>
