@@ -12,7 +12,10 @@ export default extendConfig(baseConfig, () => {
 		},
 		plugins: [
 			staticAdapter({
-				origin: import.meta.env.PUBLIC_URL,
+				origin:
+					process.env.NODE_ENV === "production"
+						? "https://agashane.icu"
+						: "http://localhost:5173",
 			}),
 		],
 	};
