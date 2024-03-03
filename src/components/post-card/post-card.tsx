@@ -11,6 +11,8 @@ export interface PostCardProps {
 }
 
 export const PostCard = component$<PostCardProps>(({ post }) => {
+	if (!post) return null;
+
 	return (
 		<article class="card break-after-right break-inside-avoid-column">
 			<div class="card-body">
