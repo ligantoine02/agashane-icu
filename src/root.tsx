@@ -6,9 +6,6 @@ import {
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 
-import "@fontsource-variable/archivo";
-import "@fontsource-variable/figtree";
-import "@fontsource-variable/recursive";
 import "@fontsource/ibm-plex-mono";
 import "@fontsource-variable/darker-grotesque";
 
@@ -30,7 +27,7 @@ export default component$(() => {
 				<link rel="manifest" href="/manifest.json" />
 				<RouterHead />
 			</head>
-			<body lang="en">
+			<body lang="en" class="font-darkerGrotesque">
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>

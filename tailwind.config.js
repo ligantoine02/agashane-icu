@@ -2,18 +2,13 @@
 export default {
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
+		container: {
+			center: true,
+		},
 		extend: {
 			fontFamily: {
 				mono: ["IBM Plex Mono", "ui-monospace"],
-				sans: [
-					"Figtree Variable",
-					"Archivo Variable",
-					"Recursive Variable",
-					"sans-serif",
-				],
-				figtree: ["Figtree Variable", "sans-serif"],
-				archivo: ["Archivo Variable", "sans-serif"],
-				recursive: ["Recursive Variable", "sans-serif"],
+				sans: ["Darker Grotesque Variable", "sans-serif"],
 				darkerGrotesque: ["Darker Grotesque Variable", "sans-serif"],
 				neueMachina: [
 					"Neue Machina",

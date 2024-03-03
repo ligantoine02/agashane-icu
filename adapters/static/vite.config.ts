@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
 		},
 		plugins: [
 			staticAdapter({
-				origin: "http://localhost:5173",
+				origin: import.meta.env.PUBLIC_URL,
 			}),
 		],
 	};

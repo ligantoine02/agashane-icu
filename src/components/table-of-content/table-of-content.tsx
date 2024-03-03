@@ -3,11 +3,13 @@ import { LuChevronUp, LuLink } from "@qwikest/icons/lucide";
 import { generateToc } from "~/lib/generateToc";
 
 export interface TableOfContentProps {
-	content: string;
+	content?: string;
 }
 
 export const TableOfContent = component$<TableOfContentProps>(
 	({ content }) => {
+		if (!content) return null;
+
 		const headings = generateToc(content);
 		console.info(headings);
 
@@ -16,7 +18,7 @@ export const TableOfContent = component$<TableOfContentProps>(
 				<section class="menu-section">
 					<ul class="menu-items">
 						{headings.map((heading) => (
-							<li>
+							<li key={heading.slug}>
 								{heading.depth === 2 ? (
 									<>
 										<input
