@@ -18,7 +18,13 @@ export const PostCard = component$<PostCardProps>(({ post }) => {
 			<div class="card-body">
 				<nav class="flex flex-row items-center flex-wrap gap-2">
 					{post?.labels?.edges?.map((label) => (
-						<LabelButton key={label?.node?.id} label={label?.node} />
+						<a
+							href={`/blog/topics/${toSlug(label?.node?.name, "")}`}
+							class="badge badge-flat-primary badge-lg"
+							key={label?.node?.id}
+						>
+							{label?.node?.name}
+						</a>
 					))}
 				</nav>
 				<h3 class="card-header mb-2">
