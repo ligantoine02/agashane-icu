@@ -9,7 +9,7 @@ export const toSlug = (title?: string, id?: number | string): string => {
 };
 
 export const extractSubtitle = (title?: string): string => {
-	return title?.substring(0, title?.indexOf("![")) ?? "";
+	return title?.substring(0, title?.indexOf("</h2>")) ?? "";
 };
 
 export const capitalize = (str?: string): string => {

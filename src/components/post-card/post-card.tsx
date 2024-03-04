@@ -2,9 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import type { Issue, Maybe } from "@octokit/graphql-schema";
 
 import { extractSubtitle, toSlug } from "~/lib/utils";
-import { LabelButton } from "../label-button/label-button";
 import { DateField } from "../date-field/date-field";
-import { QShowSubtitle } from "~/integrations/react/ShowSubtitle";
+import { ShowPost } from "../show-post/show-post";
 
 export interface PostCardProps {
 	post?: Maybe<Issue>;
@@ -14,7 +13,7 @@ export const PostCard = component$<PostCardProps>(({ post }) => {
 	if (!post) return null;
 
 	return (
-		<article class="card break-after-right break-inside-avoid-column">
+		<article class="card">
 			<div class="card-body">
 				<nav class="flex flex-row items-center flex-wrap gap-2">
 					{post?.labels?.edges?.map((label) => (
@@ -30,13 +29,13 @@ export const PostCard = component$<PostCardProps>(({ post }) => {
 				<h3 class="card-header mb-2">
 					<a
 						href={`/blog/${toSlug(post?.title, post?.number)}`}
-						class="text-2xl font-neueMachina"
+						class="text-xl md:text-2xl uppercase leading-relaxed font-neueMachina"
 					>
 						{post?.title}
 					</a>
 				</h3>
 				<a href={`/blog/${toSlug(post?.title, post?.number)}`}>
-					<QShowSubtitle content={extractSubtitle(post?.body)} />
+					<ShowPost content={extractSubtitle(post?.bodyHTML)} subtitle />
 				</a>
 				<DateField date={post?.createdAt} />
 			</div>

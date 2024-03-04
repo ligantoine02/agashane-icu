@@ -42,6 +42,7 @@ class Github {
 					          title
 					          number
 					          body
+					          bodyHTML
 					          createdAt
 					          labels (first: 3) { 
 					  					edges {
@@ -114,6 +115,7 @@ class Github {
 				          number
 				          title
 				          body
+				          bodyHTML
 				          createdAt
 				          labels (first: 3) {
 				          	edges {
@@ -151,6 +153,7 @@ class Github {
 				      number
 				      title
 				      body
+				      bodyHTML
 				      createdAt
 				      labels (first: 5) {
 				        nodes {

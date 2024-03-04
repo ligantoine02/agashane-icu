@@ -37,7 +37,7 @@ export default component$(() => {
 	const label = value.repository.label as Label;
 
 	return (
-		<main class="container p-12">
+		<main class="container px-6 py-8 md:p-12">
 			<header class="py-8 mt-12 lg:mt-24">
 				<h1 class="text-4xl font-neueMachina uppercase">{label?.name}</h1>
 				<h2 class="text-2xl text-content1">{label?.description}</h2>

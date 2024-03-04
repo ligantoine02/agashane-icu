@@ -26,21 +26,21 @@ export default component$(() => {
 	} = postsResponse as RepositoryResponse;
 
 	return (
-		<main class="container p-12">
+		<main class="container px-6 py-8 md:p-12">
 			{/* LABELS */}
-			<section>
-				<h2>Topics</h2>
-				<div class="flex flex-row gap-4 items-center">
+			<header class="py-8 mt-12 lg:mt-24 space-y-4">
+				<h2 class="text-4xl font-neueMachina uppercase">Topics</h2>
+				<div class="flex flex-row gap-2 md:gap-4 items-center flex-wrap">
 					{labels?.nodes?.map((label) => (
 						<LabelButton label={label} key={label?.id} size="lg" />
 					))}
 				</div>
-			</section>
+			</header>
 			{/* /LABELS */}
 
 			{/* POSTS */}
 			<section class="py-12">
-				<div class="grid grid-cols-3 gap-4 items-start">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
 					{issues?.edges?.map((issue) => (
 						<PostCard key={issue?.node?.id} post={issue?.node} />
 					))}
