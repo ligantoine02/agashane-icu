@@ -3,8 +3,8 @@ import { Octokit } from "octokit";
 
 class Github {
 	private client: Octokit;
-	private repo: string = import.meta.env.PUBLIC_REPO;
-	private owner: string = import.meta.env.PUBLIC_OWNER;
+	private repo: string = process.env.GH_REPO ?? "agashane-icu";
+	private owner: string = process.env.GH_OWNER ?? "ligantoine02";
 
 	private params = {
 		owner: this.owner,
@@ -15,9 +15,9 @@ class Github {
 		this.client = new Octokit({
 			authStrategy: createAppAuth,
 			auth: {
-				appId: import.meta.env.PUBLIC_APP_ID,
-				privateKey: import.meta.env.PUBLIC_PRIVATE_KEY,
-				installationId: import.meta.env.PUBLIC_INSTALLATION_ID,
+				appId: process.env.APP_ID,
+				privateKey: process.env.PRIVATE_KEY?.replace(/\\n/g, "\n"),
+				installationId: process.env.INSTALLATION_ID,
 			},
 		});
 	}
