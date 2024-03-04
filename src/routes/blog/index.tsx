@@ -41,7 +41,7 @@ export default component$(() => {
 			{/* POSTS */}
 			<section class="py-12">
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-					{issues?.edges?.map((issue) => (
+					{issues.edges?.map((issue) => (
 						<PostCard key={issue?.node?.id} post={issue?.node} />
 					))}
 				</div>

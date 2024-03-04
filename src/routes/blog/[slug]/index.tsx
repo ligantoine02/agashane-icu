@@ -6,7 +6,7 @@ import {
 import { DateField } from "~/components/date-field/date-field";
 import { LabelButton } from "~/components/label-button/label-button";
 import { ShowPost } from "~/components/show-post/show-post";
-import { RepositoryResponse } from "~/lib/apiTypes";
+import type { RepositoryResponse } from "~/lib/apiTypes";
 import { gh } from "~/lib/gh";
 import { toSlug } from "~/lib/utils";
 
@@ -16,7 +16,7 @@ export const onStaticGenerate: StaticGenerateHandler = async () => {
 	} = (await gh.getIssues({ limit: 50 })) as RepositoryResponse;
 
 	return {
-		params: issues?.edges?.map((issue) => {
+		params: issues.edges?.map((issue) => {
 			return { slug: toSlug(issue?.node?.title, issue?.node?.number) };
 		}),
 	};

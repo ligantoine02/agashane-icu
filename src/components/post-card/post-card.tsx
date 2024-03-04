@@ -16,7 +16,7 @@ export const PostCard = component$<PostCardProps>(({ post }) => {
 		<article class="card">
 			<div class="card-body">
 				<nav class="flex flex-row items-center flex-wrap gap-2">
-					{post?.labels?.edges?.map((label) => (
+					{post.labels?.edges?.map((label) => (
 						<a
 							href={`/blog/topics/${toSlug(label?.node?.name, "")}`}
 							class="badge badge-flat-primary badge-lg"
@@ -28,16 +28,16 @@ export const PostCard = component$<PostCardProps>(({ post }) => {
 				</nav>
 				<h3 class="card-header mb-2">
 					<a
-						href={`/blog/${toSlug(post?.title, post?.number)}`}
+						href={`/blog/${toSlug(post.title, post.number)}`}
 						class="text-xl md:text-2xl uppercase leading-relaxed font-neueMachina"
 					>
-						{post?.title}
+						{post.title}
 					</a>
 				</h3>
-				<a href={`/blog/${toSlug(post?.title, post?.number)}`}>
-					<ShowPost content={extractSubtitle(post?.bodyHTML)} subtitle />
+				<a href={`/blog/${toSlug(post.title, post.number)}`}>
+					<ShowPost content={extractSubtitle(post.bodyHTML)} subtitle />
 				</a>
-				<DateField date={post?.createdAt} />
+				<DateField date={post.createdAt} />
 			</div>
 		</article>
 	);
