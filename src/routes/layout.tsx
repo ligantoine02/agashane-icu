@@ -18,7 +18,9 @@ export default component$(() => {
 	return (
 		<div class="container">
 			<Header />
-			<Slot />
+			<main class="w-full lg:w-2/3 mx-auto my-24 px-4">
+				<Slot />
+			</main>
 			<Footer />
 		</div>
 	);

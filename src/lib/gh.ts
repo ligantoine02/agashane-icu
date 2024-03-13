@@ -83,6 +83,20 @@ class Github {
 				        id
 				        name
 				        description
+				        color
+				        issues (
+				        	first: 4,
+				        	orderBy: { field: CREATED_AT, direction: DESC }
+				        ) {
+				        	nodes {
+				        		id
+				        		number
+				        		title
+				        		body
+				        		bodyHTML
+				        		createdAt
+				        	}
+				        }
 				      }
 				    }
 				  }
